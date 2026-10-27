@@ -1,0 +1,19 @@
+<h1>Departamentos</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Numero</th>
+            <th>Nombre</th>
+            <th>Localidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(dep of arrayDepartamentos;track dep) {
+            <tr>
+                <td>{{dep.numero}}</td>
+                <td>{{dep.nombre}}</td>
+                <td>{{dep.localidad}}</td>
+            </tr>
+        }
+    </tbody>
+</table>
