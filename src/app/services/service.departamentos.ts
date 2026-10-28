@@ -42,4 +42,12 @@ export class ServiceDepartamentos {
                 this.http.put(this.url+request,json,{headers:header})
             );
         }
+
+        async deleteDepartamentoAsync(id:number):Promise<any>{
+            let request="api/departamentos/"+id;
+            return firstValueFrom(this.http.delete(this.url+request));
+        }
+
+        
+
 }

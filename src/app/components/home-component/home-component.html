@@ -23,6 +23,9 @@
                 <td>
                     <a [routerLink]="['/update',dep.numero]" class="btn btn-primary">Actualizar</a>
                 </td>
+                <td>
+                    <button (click)="deleteDepartamento(dep.numero)" class="btn btn-danger">Borrar</button>
+                </td>
             </tr>
         }
     </tbody>

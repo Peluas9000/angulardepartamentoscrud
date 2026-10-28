@@ -9,8 +9,8 @@ const routes: Routes = [
   {path:"", component: HomeComponent},
   {path:"form", component: CreateComponent},
   {path:"details/:id/:nombre/:localidad", component:DetailsComponent},
-  {path:"update/:id", component:UpdateComponent}
-
+  {path:"update/:id", component:UpdateComponent},
+  
 ];
 
 @NgModule({

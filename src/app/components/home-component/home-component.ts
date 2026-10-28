@@ -14,6 +14,17 @@ export class HomeComponent implements OnInit{
   
   }
 
+  async deleteDepartamento(id:number){
+    let response=await this._service.deleteDepartamentoAsync(id);
+    console.log(response);
+    await this.loadDepartamentos();
+    this._cdr.detectChanges();
+  }
+
+  async loadDepartamentos(){
+    this.arrayDepartamentos = await this._service.getDepartamentos();
+    this._cdr.detectChanges();
+  }
   async ngOnInit(): Promise<void> {
     this.arrayDepartamentos = await this._service.getDepartamentos();
     this._cdr.detectChanges();
