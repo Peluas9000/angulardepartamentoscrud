@@ -16,12 +16,14 @@ export class ServiceDepartamentos {
     return firstValueFrom(this.http.get<Departamento[]>(url));
 }
 
-async getDepartamento(departamento:Departamento): Promise<any> { 
+async createDepartamento(departamento:Departamento): Promise<any> { 
 let json=JSON.stringify(departamento);
 let header=new HttpHeaders();
 header=header.set("content-type","application/json");
 let request="api/departamentos";
 
-return firstValueFrom(this.http.post(this.url+request,json,{headers:header}));
+return firstValueFrom(
+    this.http.post(this.url+request,json,{headers:header})
+);
 }
 }

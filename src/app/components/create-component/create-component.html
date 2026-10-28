@@ -1,10 +1,11 @@
 <h1>Create departamentos</h1>>
+<h2>{{mensaje}}</h2>
 <form createForm="ngForm" >
     <label>Id departamento</label>
-    <input type="number" name="idDepartamento" ngModel required>
+    <input type="number" name="cajaId" #cajaId class="form-control" >
     <label>Nombre departamento</label>
-    <input type="text" name="nombreDepartamento" ngModel required>
+    <input type="text" name="cajaNombre" #cajaNombre class="form-control" >
     <label>Localidad departamento</label>
-    <input type="text" name="localidadDepartamento" ngModel required>
-    <button type="submit" class="btn btn-primary">Crear departamento</button>
+    <input type="text" name="cajaLocalidad" #cajaLocalidad class="form-control" >
+    <button (click)="insertarDepartamento()" class="btn btn-primary">Crear departamento</button>
 </form>

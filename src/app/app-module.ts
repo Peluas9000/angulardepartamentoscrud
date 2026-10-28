@@ -7,9 +7,10 @@ import { HomeComponent } from './components/home-component/home-component';
 import { FormsModule } from '@angular/forms';
 import { ServiceDepartamentos } from './services/service.departamentos';
 import { CreateComponent } from './components/create-component/create-component';
+import { DetailsComponent } from './components/details-component/details-component';
 
 @NgModule({
-  declarations: [App, MenuComponent, HomeComponent, CreateComponent],
+  declarations: [App, MenuComponent, HomeComponent, CreateComponent, DetailsComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners(), ServiceDepartamentos],
   bootstrap: [App],
