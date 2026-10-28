@@ -10,20 +10,36 @@ export class ServiceDepartamentos {
     constructor(private http:HttpClient) {
     }
 
-   async getDepartamentos(): Promise<Departamento[]> {
-    let request="api/departamentos";
-    let url=environment.apiDepartamentos+request;
-    return firstValueFrom(this.http.get<Departamento[]>(url));
-}
+        async getDepartamentos(): Promise<Departamento[]> {
+        let request="api/departamentos";
+        let url=environment.apiDepartamentos+request;
+        return firstValueFrom(this.http.get<Departamento[]>(url));
+        }
 
-async createDepartamento(departamento:Departamento): Promise<any> { 
-let json=JSON.stringify(departamento);
-let header=new HttpHeaders();
-header=header.set("content-type","application/json");
-let request="api/departamentos";
+        async createDepartamento(departamento:Departamento): Promise<any> { 
+        let json=JSON.stringify(departamento);
+        let header=new HttpHeaders();
+        header=header.set("content-type","application/json");
+        let request="api/departamentos";
 
-return firstValueFrom(
-    this.http.post(this.url+request,json,{headers:header})
-);
-}
+        return firstValueFrom(
+            this.http.post(this.url+request,json,{headers:header})
+        );
+        }
+
+        //get por el idl departamento
+        async findDepartamentoById(id:number):Promise<Departamento>{
+            let request="api/departamentos/"+id;
+            return firstValueFrom(this.http.get<Departamento>(this.url+request));
+        }
+
+        async updateDepartamentoAsync(departamento:Departamento):Promise<any>{
+            let json=JSON.stringify(departamento);
+            let header=new HttpHeaders().set("content-type","application/json");
+            let request="api/departamentos";
+ 
+            return firstValueFrom(
+                this.http.put(this.url+request,json,{headers:header})
+            );
+        }
 }

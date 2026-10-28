@@ -18,9 +18,10 @@
                         <a [routerLink]="['/details', dep.numero, dep.nombre, dep.localidad]">Detalles</a>
 
                      -->
-                        <a [routerLink]="['/details/'+dep.numero+'/'+dep.nombre+'/'+dep.localidad]">Detalles</a>
-
-
+                        <a [routerLink]="['/details/'+dep.numero+'/'+dep.nombre+'/'+dep.localidad]" class="btn btn-info">Detalles</a>
+                </td>
+                <td>
+                    <a [routerLink]="['/update',dep.numero]" class="btn btn-primary">Actualizar</a>
                 </td>
             </tr>
         }
