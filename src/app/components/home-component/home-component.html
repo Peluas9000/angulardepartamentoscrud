@@ -13,6 +13,15 @@
                 <td>{{dep.numero}}</td>
                 <td>{{dep.nombre}}</td>
                 <td>{{dep.localidad}}</td>
+                <td>
+                    <!-- Esto es la forma con parametros sin usar queryParams, pero no es recomendable porque se ve la informacion en la url
+                        <a [routerLink]="['/details', dep.numero, dep.nombre, dep.localidad]">Detalles</a>
+
+                     -->
+                        <a [routerLink]="['/details/'+dep.numero+'/'+dep.nombre+'/'+dep.localidad]">Detalles</a>
+
+
+                </td>
             </tr>
         }
     </tbody>
